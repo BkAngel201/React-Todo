@@ -20,24 +20,29 @@ class TodoForm extends React.Component {
         return (
             <div className="form">
                 <input type="text" name="task" value={this.state.task} onChange={this.handleTaskInputChange}/>
-                <button onClick={
-                    () => {
-                        this.props.addTask(this.state.task)
-                        this.setState({task: ''})
-                    }
-                }>
-                    Add Task
-                </button>
-                <button onClick={this.props.clearCompleted}>
-                    Clear Task Completed
-                </button>
-                <button onClick={
-                    () => {
-                        this.props.searchTask(this.state.task)
-                    }
-                }>
-                    Search Tasks
-                </button>
+                <div className="buttonPanel">
+                    <button onClick={
+                        () => {
+                            if(this.state.task !== '') {
+                                this.props.addTask(this.state.task)
+                                this.setState({task: ''})
+                            }
+                        }
+                    }>
+                        Add Task
+                    </button>
+                    <button onClick={this.props.clearCompleted}>
+                        Clear Task Completed
+                    </button>
+                    <button onClick={
+                        () => {
+                            this.props.searchTask(this.state.task)
+                        }
+                    }>
+                        Search Tasks
+                    </button>
+                </div>
+                
             </div>
             
         )

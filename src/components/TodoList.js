@@ -9,7 +9,7 @@ class TodoList extends React.Component {
         
         if(this.props.search === false) {
             return (
-                <div>{
+                <div className="list">{
                     this.props.todoList.map(item => {
                         return (<Todo item={item} completeTask={this.props.completeTask}/>)
                     })
@@ -18,7 +18,7 @@ class TodoList extends React.Component {
             )
         } else {
             return (
-                <div>{
+                <div className="list">{
                     this.props.todoList.filter(item => {
                         return item.task.includes(this.props.search)
                     })

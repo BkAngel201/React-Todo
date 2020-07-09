@@ -1,3 +1,75 @@
-.task.completed {
-    text-decoration: line-through
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.app {
+    width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+.form input {
+    width: 100%;
+    padding: 20px 10px 5px;
+    font-size: 1.4rem;
+    border: none;
+    border-bottom: 1px solid hotpink;
+    margin-bottom: 20px;
+}
+.form input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 3px solid hotpink;
+    margin-bottom: 18px;
+}
+.form .buttonPanel {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.form .buttonPanel button {
+    width: 30%;
+    border: 1px solid darkred;
+    background-color: crimson;
+    padding: 10px;
+    color: white;
+}
+
+.form .buttonPanel button:nth-child(odd) {
+    border-color: darkgreen;
+    background-color: green; 
+}
+.form .buttonPanel button:hover {
+    background-color: black;
+}
+.list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.list .task {
+    position: relative;
+    width: 45%;
+    padding: 20px 30px 40px;
+    background-color: hotpink;
+    margin: 10px 0;
+}
+.list .task span {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: .85rem;
+    color: slateblue;
+}
+
+.task.completed:after {
+    content: " (Completed)";
+    color: gold;
 }
