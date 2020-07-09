@@ -18,7 +18,7 @@ class TodoForm extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="form">
                 <input type="text" name="task" value={this.state.task} onChange={this.handleTaskInputChange}/>
                 <button onClick={
                     () => {

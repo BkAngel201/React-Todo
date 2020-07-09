@@ -4,26 +4,29 @@ import React from 'react'
 import Todo from './Todo'
 
 class TodoList extends React.Component {
-    constructor(props) {
-        super(props)
-    }
     
     render() {
         
         if(this.props.search === false) {
             return (
-                this.props.todoList.map(item => {
-                    return (<Todo item={item} completeTask={this.props.completeTask}/>)
-                })
+                <div>{
+                    this.props.todoList.map(item => {
+                        return (<Todo item={item} completeTask={this.props.completeTask}/>)
+                    })
+                }</div>
+                
             )
         } else {
             return (
-                this.props.todoList.filter(item => {
-                    return item.task.includes(this.props.search)
-                })
-                .map(item => {
-                    return (<Todo item={item} completeTask={this.props.completeTask}/>)
-                })
+                <div>{
+                    this.props.todoList.filter(item => {
+                        return item.task.includes(this.props.search)
+                    })
+                    .map(item => {
+                        return (<Todo item={item} completeTask={this.props.completeTask}/>)
+                    })
+                }</div>
+                
             )
         }
         
